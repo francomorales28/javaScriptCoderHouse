@@ -7,7 +7,8 @@ function menu() {
         "Consultar saldo (1)" +
         "Depositar dinero (2)" +
         "Retirar dinero (3)" +
-        "Salir (4)"
+        "Consultar movimientos (4)" +
+        "Salir (5)"
     );
 }
 
@@ -40,6 +41,14 @@ function retirarDinero() {
     }
 }
 
+function consultarMovimientos() {
+    if (movimientos.length === 0) {
+        alert('No hay movimientos registrados.');
+    } else {
+        alert('Movimientos:' + movimientos);
+    }
+}  
+
 let opcion
 let continuar = true;
 while (continuar) {
@@ -55,10 +64,14 @@ while (continuar) {
             retirarDinero();
             break;
         case '4':
+            consultarMovimientos();
+            break;
+        case '5':
             continuar = false;
             break;
         default:
             alert('Opción inválida.');
     }
 }
+
 alert('Gracias por usar el cajero automático. ¡Hasta luego!'); 
